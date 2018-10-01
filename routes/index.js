@@ -5,11 +5,20 @@ const classroomController = require('../controllers').classroom;
 const studentController = require('../controllers').student;
 const lecturerController = require('../controllers').lecturer;
 const courseController = require('../controllers').course;
+const demoController = require('../controllers').demo;
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
+
+
+/* Demo Router */
+router.get('/api/demo', demoController.list);
+// router.get('/api/demo/:id', demoController.getById);
+// router.post('/api/demo', demoController.add);
+// router.put('/api/demo/:id', demoController.update);
+// router.delete('/api/demo/:id', demoController.delete);
 
 /* Classroom Router */
 router.get('/api/classroom', classroomController.list);
